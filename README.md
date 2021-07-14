@@ -10,7 +10,7 @@ Editions in development:
 -Standard
 -Legacy (for older Windows versions)
 
-*% * - Experience may vary.
-*& ** - Limited to a text-based UI (TUI) browser.
+* - Experience may vary.
+** - Limited to a text-based UI (TUI) browser.
 
 GNU General Public License v3
