@@ -1,0 +1,3 @@
+Right now the .pkg files are dummies.
+
+This is to satisfy the implemented file integrity check
