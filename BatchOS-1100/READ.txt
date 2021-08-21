@@ -1,5 +1,5 @@
-This is Alpha Development Build 1000.
+This is Alpha Development Build 1100.
 
-At this point, the first version of the installer program has been completed.
-The development focus has now shifted on the mini-OS itself.
-Stay tuned.
+Development has started on the Operating System itself.
+Programs for BatchOS (well, other batch files) will soon be ready.
+Stay tuned as always.
