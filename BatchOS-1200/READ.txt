@@ -1,0 +1,17 @@
+This is Alpha Development Build 1200.
+
+A changelog function has been added into BatchOS.
+Two new commands. Fully functioning encrypted account system.
+More small changes.
+
+Note that due to the account system, BatchOS may not work well
+if the host OS does not have PowerShell. This can be a problem for
+systems running old operating systems, such as Windows XP. You can
+use BatchOS without it, just press N when it prompts you if you
+wish to use accounts. PowerShell can be found for download online,
+though for systems like XP/Vista, you will be stuck with v1/v2.
+
+Speaking of Windows XP, I've found some minor incompatibilities with
+it concerning the setup program. A fix will be implemented soon.
+
+Expect more in the coming days.

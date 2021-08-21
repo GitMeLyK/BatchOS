@@ -1,0 +1,184 @@
+@echo off
+if exist batchos-temp\ (
+rmdir /s /q batchos-temp >nul
+)
+:ALPHANOTICE
+cls
+color 07
+title Batch OS
+echo BatchOS Standard 
+echo.
+echo Alpha Development Build 1200
+echo.
+echo This software is still under heavy development.
+echo As such, signs of incompletion such as bugs may appear.
+echo.
+echo Press any key to boot.
+echo.
+pause >nul
+cls
+rmdir C:\BatchTemp /q
+for /f "delims=" %%x in (a.cct) do set accounts=%%x
+if not defined accounts (
+goto PREBOOT
+) else (
+goto CHK
+)
+:CHK
+if %accounts%==Y goto BOOT
+if %accounts%==N goto PREBOOT2
+:PREBOOT
+cls
+echo Do you wish to use accounts on BatchOS?
+set /p "accounts=[Y/N]: "
+if %accounts%==Y echo Y>a.cct && goto BOOT
+if %accounts%==N echo N>a.cct && goto PREBOOT2
+
+:BOOT
+call batlogon.bat
+:PREBOOT2
+title BatchOS - Terminal
+cls
+color 17
+if exist batchos-temp\ (
+  goto BOOT2 
+) else (
+  mkdir batchos-temp >nul
+)
+:BOOT2
+title BatchOS - Terminal
+if %accounts%==Y (
+for /f "delims=" %%x in (a2.cct) do set username=%%x
+) else (
+set username=Accounts Disabled
+)
+echo BatchOS Alpha Development Build
+echo Logged in as: %username%
+echo.
+echo Current Operating Environment: Terminal
+echo.
+echo Issue the command SWITCH to change your operating environment.
+echo.
+echo Issue the command LIST for a list of all commands.
+echo ------------------------------------------------------------------------------------------
+:INPUT
+echo.
+set /p "InputCmd=C:\>"
+if not defined InputCmd goto :BOOT2
+if /i "%InputCmd%"=="cls" cls & goto :INPUT
+if /i "%InputCmd%"=="info" (
+echo.
+echo BatchOS Standard
+echo Alpha Development Build 1200
+echo August 2021
+goto INPUT
+)
+if /i "%InputCmd%"=="switch" (
+echo The Graphical Environment is currently WIP.
+goto INPUT
+)
+if /i "%InputCmd%"=="shutdown" (
+echo BatchOS is shutting down...
+rmdir /s /q batchos-temp >nul
+ping localhost -n 2 >nul
+exit
+)
+if /i "%InputCmd%"=="restart" (
+echo BatchOS is restarting...
+rmdir /s /q batchos-temp >nul
+ping localhost -n 2 >nul
+goto ALPHANOTICE
+)
+if /i "%InputCmd%"=="list" (
+type li.st
+echo.
+goto INPUT
+)
+if /i "%InputCmd%"=="start" (
+cd "%~dp0\programs"
+for /r "%~dp0\programs" %%F in (*.*) do echo %%~nF [Batch Program]
+goto INPUT
+)
+if /i "%InputCmd%"=="changelog" (
+echo BatchOS Alpha - Dev Build 1200
+echo.
+echo Implemented local account system. Togglable in Settings.
+echo Added START command, functionality is incomplete.
+echo Added CHANGELOG command, uh, it shows the changelog which you're reading right now.
+echo Added programs directory, a basic Hello World placeholder has been inserted in it.
+echo Some changes in the pre-boot process.
+goto INPUT
+)
+if /i "%InputCmd%"=="settings" (
+cls
+echo BatchOS Settings
+echo.
+echo Toggle Accounts - 1
+echo Exit to Terminal - 2
+echo.
+choice /N /C:12 /M "Input the corresponding number to the desired option to configure."%1
+IF ERRORLEVEL ==2 GOTO INPUT
+IF ERRORLEVEL ==1 GOTO SETACC
+)
+    
+  )
+  if defined OK (
+    endlocal
+    goto :INPUT
+  ) else (
+    endlocal
+    echo '%InputCmd%' is not a valid command. Please try again.
+    goto :INPUT
+  )
+)
+
+:SETACC
+cls
+if %accounts%==N (
+set AccState=Off
+)
+if %accounts%==Y (
+set AccState=On
+)
+echo Toggle Local Accounts
+echo.
+echo If you have toggled local accounts, the current state displayed below may not update
+echo until you have restarted your BatchOS session.
+echo.
+echo Current state: %AccState%
+echo.
+choice /N /C:12 /M "[1] Toggle Accounts / [2] Back to Terminal"%1
+IF ERRORLEVEL ==2 GOTO INPUT
+IF ERRORLEVEL ==1 GOTO SETACC1
+
+:SETACC1
+cls
+if %accounts%==N (
+set %accounts%==Y
+echo Y>a.cct
+set AccState=On
+echo Local accounts are now enabled.
+pause
+goto INPUT
+)
+if %accounts%==Y (
+set %accounts%==N
+echo N>a.cct
+set AccState=Off
+echo Local accounts are now disabled.
+pause
+goto INPUT
+) 
+
+:: OLD ACCOUNT SYSTEM PLACEHOLDER - WILL BE DELETED
+:: cls
+:: color 17
+:: echo Welcome
+:: echo.
+:: echo The account mechanism of BatchOS is still under development.
+:: echo You may type anything into the password field.
+:: echo.
+:: set /p "pass="
+:: if %pass%=="%pass%" (
+:: goto :PREBOOT2
+:: )
