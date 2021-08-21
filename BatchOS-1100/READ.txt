@@ -1,0 +1,5 @@
+This is Alpha Development Build 1000.
+
+At this point, the first version of the installer program has been completed.
+The development focus has now shifted on the mini-OS itself.
+Stay tuned.

@@ -1,0 +1,11 @@
+Batch Interpreter / Uh
+Document Writer / TBA
+Calculator / TBA
+ZIP Tool / DONE as BATCHZIP
+Downloader/Uploader / DONE as BATCHTRANSFER
+LogTool (TM) / DONE
+Music player / WORK IN PROGRESS as BATCHMUSIC
+Various batch games / TBA
+Text to speech / TBA
+Password generator / TBA
+Notebook (similar to OneNote) / WORK IN PROGRESS as BATCHNOTES

@@ -1,0 +1,87 @@
+@echo off
+:ALPHANOTICE
+cls
+color 07
+title Batch OS
+echo BatchOS Standard 
+echo.
+echo Alpha Development Build 1100
+echo.
+echo This software is still under heavy development.
+echo As such, signs of incompletion such as bugs may appear.
+echo.
+echo Press any key to boot.
+echo.
+pause >nul
+cls
+rmdir C:\BatchTemp /q
+goto :BOOT
+
+:BOOT
+cls
+color 17
+echo Welcome
+echo.
+echo The account mechanism of BatchOS is still under development.
+echo You may type anything into the password field.
+echo.
+set /p "pass="
+if %pass%=="%pass%" (
+goto :BOOT2
+)
+:BOOT2
+title BatchOS Terminal
+cls
+color 17
+mkdir batchos-temp >nul
+echo BatchOS Alpha Development Build
+echo.
+echo Current Operating Environment: Terminal
+echo.
+echo Issue the command SWITCH to change your operating environment.
+echo.
+echo Issue the command LIST for a list of all commands.
+echo ------------------------------------------------------------------------------------------
+:INPUT
+echo.
+set /p "InputCmd=C:\>"
+if not defined InputCmd goto :BOOT2
+if /i "%InputCmd%"=="cls" cls & goto :INPUT
+if /i "%InputCmd%"=="info" (
+echo.
+echo BatchOS Standard
+echo Alpha Development Build 1100
+echo August 2021
+goto INPUT
+)
+if /i "%InputCmd%"=="switch" (
+echo The Graphical Environment is currently WIP.
+goto INPUT
+)
+if /i "%InputCmd%"=="shutdown" (
+echo BatchOS is shutting down...
+ping localhost -n 2 >nul
+rmdir /s /q batchos-temp >nul
+exit
+)
+if /i "%InputCmd%"=="restart" (
+echo BatchOS is restarting...
+ping localhost -n 2 >nul
+goto ALPHANOTICE
+rmdir /s /q batchos-temp >nul
+)
+if /i "%InputCmd%"=="list" (
+type li.st
+goto INPUT
+)
+    
+  )
+  if defined OK (
+    endlocal
+    goto :INPUT
+  ) else (
+    endlocal
+    echo '%InputCmd%' is not a valid command. Please try again.
+    goto :INPUT
+  )
+)
