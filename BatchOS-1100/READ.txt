@@ -2,4 +2,4 @@ This is Alpha Development Build 1100.
 
 Development has started on the Operating System itself.
 Programs for BatchOS (well, other batch files) will soon be ready.
-Stay tuned as always.
+Stay tuned as always. 
