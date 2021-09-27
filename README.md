@@ -1,4 +1,6 @@
 # BatchOS
+
+### UPDATE: Development is currently paused. Development priority has gone to my HQ9+ implementations.
 Project BatchOS - pushing Batch to the limit. A mini operating system with functionality.
 
   BatchOS is a project that aims to create a mini-OS that can run within Windows. 
