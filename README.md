@@ -1,22 +1,24 @@
 # BatchOS
 
-### UPDATE: Development is currently paused. Development priority has gone to my HQ9+ implementations.
-Project BatchOS - pushing Batch to the limit. A mini operating system with functionality.
+### UPDATE: Project BatchOS will no longer be released in batchfiles. All builds 1200 and older are now deprecated.
+### The project won't be renamed for now, but the project has now been transitioned to Python for easier development.
 
-  BatchOS is a project that aims to create a mini-OS that can run within Windows. 
-  This project also aims for compatibility. 
- - That means acceptably working even in XP¹.
+## Project BatchOS - pushing the command line to the limit. A simulated operating system with functionality.
+
+  BatchOS is a project that aims to create a mini-OS that can run within Windows (Mac and Linux soon).
+  That means a simulated CLI OS (comparable to DOS) on your preferred command line. All versions with build numbers are to be considered DEPRECATED and will be removed at a later date. They are batchfiles incompatible with any other OS than Windows. Issues raised regarding BatchOS builds 1000, 1100 and 1200 will be ignored.
    
-Right now, the project is in the Alpha development stage. The first beta release is anticipated in 3 months.
+The project has been reset and will transition its versioning from build numbers to version numbers (e.g. v1.0).
 
-Basic programs will also come with it (well, they're just other batch files) in order to enhance the BatchOS experience.
+
+
+There are plans to write some 'programs' for it (well they're just other Python scripts) in order to enhance the BatchOS experience.
 
 ## Features
 
-- DOS-style terminal
-- Text-based graphical environment coming soon!
+- Command line
+- Cross-platform (testing is done in Windows and Linux Mint)
 - Compact by design
-- Maintains compatibility by using features that work on older Windows systems
 - Internet access²
 
 
@@ -24,13 +26,12 @@ Basic programs will also come with it (well, they're just other batch files) in 
 
 -Standard (Development Priority)
 
--Legacy 
-
 ## Other
 
 Caveats:
 
 1 - Some potential incompatibilities
-2 - Limited, due to the contexts of this mini-OS
+2 - Limited, due to the constraints of the command line.
 
 GNU General Public License v3
+2021, David Costell
