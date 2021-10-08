@@ -3,7 +3,7 @@
 ### UPDATE: Project BatchOS will no longer be released in batchfiles. All builds 1200 and older are now deprecated.
 ### The project won't be renamed for now, but the project has now been transitioned to Python for easier development.
 
-## Project BatchOS - pushing the command line to the limit. A simulated operating system with functionality.
+# Project BatchOS - pushing the command line to the limit. Simulated operating system with functionality.
 
   BatchOS is a project that aims to create a mini-OS that can run within Windows (Mac and Linux soon).
   That means a simulated CLI OS (comparable to DOS) on your preferred command line. All versions with build numbers are to be considered DEPRECATED and will be removed at a later date. They are batchfiles incompatible with any other OS than Windows. Issues raised regarding BatchOS builds 1000, 1100 and 1200 will be ignored.
