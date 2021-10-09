@@ -33,5 +33,5 @@ Caveats:
 1 - Some potential incompatibilities
 2 - Limited, due to the constraints of the command line.
 
-GNU General Public License v3
+MIT License
 2021, David Costell
