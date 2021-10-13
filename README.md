@@ -12,7 +12,7 @@ The project has been reset and will transition its versioning from build numbers
 
 
 
-There are plans to write some 'programs' for it (well they're just other Python scripts) in order to enhance the BatchOS experience.
+There are plans to write some 'programs' for it (a.k.a. other Python scripts) in order to enhance the BatchOS experience.
 
 ## Features
 
